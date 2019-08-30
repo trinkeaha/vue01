@@ -1,7 +1,14 @@
 package com.qfedu.emp.entity;
 
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+
+@ApiModel
 public class Employee {
+    @ApiModelProperty(name = "id",value = "用户id")
     private Integer id;
+    @ApiModelProperty(value = "用户姓名")
     private String name;
     private Integer age;
     private String sex;

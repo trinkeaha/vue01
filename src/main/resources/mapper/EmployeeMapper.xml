@@ -13,6 +13,21 @@
         select * from employee where id=#{id}
     </select>
 
+    <insert id="insertForeach" parameterType="java.util.List" useGeneratedKeys="false">
+        insert into employee
+        (name,age,sex,phone)
+        values
+        <foreach collection="list" item="item" index="index" separator=",">
+            (
+            #{item.name},
+            #{item.age},
+            #{item.sex},
+            #{item.phone}
+            )
+        </foreach>
+    </insert>
+
+
     <insert id="add" parameterType="employee">
         insert into employee
         <trim prefix="(" suffix=")" suffixOverrides=",">

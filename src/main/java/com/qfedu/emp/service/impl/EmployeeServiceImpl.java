@@ -36,4 +36,9 @@ public class EmployeeServiceImpl implements EmployeeService {
     public Employee findById(Integer id) {
         return employeeDao.findById(id);
     }
+
+    @Override
+    public int insertForeach(List<Employee> list) {
+        return employeeDao.insertForeach(list);
+    }
 }
